@@ -1,5 +1,6 @@
 package com.example.springboot.app.service;
 
+import java.lang.annotation.Annotation;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,7 +15,7 @@ import com.example.springboot.app.repository.EmpleadosRepository;
 
 @Service //Notación para indicar que es un servicio
 @Transactional //define que un conjunto de instrucciones que se ejecutan en bloque asegura y valida el metodo termine correctamente antes de ejecutar algun otro metodo
-public class EmpleadosServiceImpl implements EmpleadosService { 
+public class ServiceImpl implements Service { 
 
 	//Inyección de dependecias (crea una instancia cuando lo requiera)
 	@Autowired
@@ -95,8 +96,20 @@ public class EmpleadosServiceImpl implements EmpleadosService {
 	}
 
 	@Override
-	public void deleteProduct(long id) {
+	public void deleteEmpleados(long id) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public Class<? extends Annotation> annotationType() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String value() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
